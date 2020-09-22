@@ -6,6 +6,8 @@ import { InfoComponent } from './info/info.component';
 import { ProductComponent } from './product/product.component';
 import { UserComponent } from './user/user.component';
 import { BonusCardComponent } from './bonus-card/bonus-card.component';
+import { BonusComponent } from './bonus/bonus.component';
+import { SearchingComponent } from './searching/searching.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { BonusCardComponent } from './bonus-card/bonus-card.component';
     InfoComponent,
     ProductComponent,
     UserComponent,
-    BonusCardComponent
+    BonusCardComponent,
+    BonusComponent,
+    SearchingComponent
   ],
   imports: [
     BrowserModule
