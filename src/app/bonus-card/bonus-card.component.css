@@ -1,0 +1,7 @@
+.bonuscard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+  color: red;
+}
