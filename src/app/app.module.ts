@@ -6,8 +6,10 @@ import { InfoComponent } from './info/info.component';
 import { ProductComponent } from './product/product.component';
 import { UserComponent } from './user/user.component';
 import { BonusCardComponent } from './bonus-card/bonus-card.component';
+
 import { BonusComponent } from './bonus/bonus.component';
 import { SearchingComponent } from './searching/searching.component';
+import { Product1Component } from './product1/product1.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { SearchingComponent } from './searching/searching.component';
     UserComponent,
     BonusCardComponent,
     BonusComponent,
-    SearchingComponent
+    SearchingComponent,
+    Product1Component
   ],
   imports: [
     BrowserModule
