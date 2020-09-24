@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Product1Component implements OnInit {
 
+  name: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
