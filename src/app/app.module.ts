@@ -7,8 +7,9 @@ import {UserComponent} from './user/user.component';
 import {BonusCardComponent} from './bonus-card/bonus-card.component';
 
 import {SearchingComponent} from './searching/searching.component';
-import {Product1Component} from './product1/product1.component';
+import {ProductViewComponent} from './product-view/product-view.component';
 import {AppRoutingModule} from './app-routing-module';
+import {ProductsDao} from './dao/products.dao';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,13 @@ import {AppRoutingModule} from './app-routing-module';
     UserComponent,
     BonusCardComponent,
     SearchingComponent,
-    Product1Component
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProductsDao],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
