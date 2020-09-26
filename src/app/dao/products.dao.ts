@@ -1,5 +1,6 @@
 import {ProductModel} from '../models/product.model';
 import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class ProductsDao {
@@ -24,8 +25,11 @@ export class ProductsDao {
     }
   ];
 
-  getProducts(): ProductModel[] {
-    return this.products;
+  getProducts(): Observable<ProductModel[]> {
+    return new Observable((observer) => {
+      observer.next(this.products);
+      observer.complete();
+    });
   }
 
   /**
@@ -45,29 +49,44 @@ export class ProductsDao {
     // }
   }
 
-  getProduct(productId: number): ProductModel {
+  getProduct(productId: number): Observable<ProductModel> {
     for (let product of this.products) {
       if (product.id === productId) {
-        return ;
+        return new Observable((observer) => {
+          observer.next(product);
+          observer.complete();
+        });
       }
     }
 
-    return null;
+    return new Observable((observer) => {
+      observer.next(null);
+      observer.complete();
+    });
   }
 
-  searchProduct(name: string): ProductModel {
+  searchProduct(name: string): Observable<ProductModel> {
     for (let product of this.products) {
       if (product.name === name) {
-        return product;
+        return new Observable((observer) => {
+          observer.next(product);
+          observer.complete();
+        });
       }
     }
 
-    return null;
+    return new Observable((observer) => {
+      observer.next(null);
+      observer.complete();
+    });
   }
 
-  searchProductByPartialName(partialName: string): ProductModel[] {
-    return this.products.filter((product) => {
-      return product.name.indexOf(partialName) !== -1;
+  searchProductByPartialName(partialName: string): Observable<ProductModel[]> {
+    return new Observable((observer) => {
+      observer.next(this.products.filter((product) => {
+        return product.name.indexOf(partialName) !== -1;
+      }));
+      observer.complete();
     });
   }
 

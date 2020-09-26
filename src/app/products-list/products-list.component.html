@@ -1,0 +1,13 @@
+<!--<p>products-list works!</p>-->
+<!--<div *n>-->
+<!--  <label>{{name}}</label>-->
+<!--</div>-->
+<h1>Product view</h1>
+<div *ngFor="let product of products$ | async">
+  <label>{{product.id}}</label>
+  <label>{{product.name}}</label>
+  <label>{{product.price}}</label>
+  <label>{{product.bonusRate}}</label>
+  <label>{{product.salePercentage}}</label>
+  <label>{{product.saleBonusRate}}</label>
+</div>

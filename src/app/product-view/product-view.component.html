@@ -1,13 +1,7 @@
-<!--<p>product-view works!</p>-->
-<!--<div *n>-->
-<!--  <label>{{name}}</label>-->
-<!--</div>-->
-<h1>Product view</h1>
-<div *ngFor="let product of products">
-  <label>{{product.id}}</label>
-  <label>{{product.name}}</label>
-  <label>{{product.price}}</label>
-  <label>{{product.bonusRate}}</label>
-  <label>{{product.salePercentage}}</label>
-  <label>{{product.saleBonusRate}}</label>
-</div>
+<h4>{{(product$ | async).id}}</h4>
+<h4>{{(product$ | async).name}}</h4>
+<h4>{{(product$ | async).price}}</h4>
+<h4>{{(product$ | async).bonusRate}}</h4>
+<h4>{{(product$ | async).isOnSale}}</h4>
+<h4>{{(product$ | async).salePercentage}}</h4>
+<h4>{{(product$ | async).saleBonusRate}}</h4>

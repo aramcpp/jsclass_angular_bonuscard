@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {ProductsDao} from '../dao/products.dao';
 import {ProductModel} from '../models/product.model';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-product-view',
@@ -10,13 +10,12 @@ import {ProductModel} from '../models/product.model';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
-  private products: ProductModel[];
-  constructor(private route: ActivatedRoute, private productsDao: ProductsDao) {
-    this.products = productsDao.getProducts();
-  }
+  public product$: Observable<ProductModel>;
+
+  constructor(private route: ActivatedRoute, private productsDao: ProductsDao) { }
 
   ngOnInit(): void {
-    console.log(this.productsDao.getProducts());
+    this.product$ = this.productsDao.getProduct(+this.route.snapshot.paramMap.get('id'));
   }
 
 }
